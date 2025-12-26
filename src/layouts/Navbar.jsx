@@ -1,13 +1,12 @@
 import React from 'react';
 
-const Product = () => {
+const Navbar = () => {
     return (
         <div>
-
-            <h1>This is Product pages</h1>
+            <h1>this is navbar</h1>
             
         </div>
     );
 };
 
-export default Product;
+export default Navbar;
