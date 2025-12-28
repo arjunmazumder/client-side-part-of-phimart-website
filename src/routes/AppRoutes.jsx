@@ -8,9 +8,7 @@ import MainLayout from '../layouts/MainLayout';
 const AppRoutes = () => {
     return (
         <Routes>
-            {/* <Route index element = {<Home />}></Route>
-            <Route path='about' element={<About />}></Route> */}
-              
+          
               <Route element={<MainLayout />}>
                 <Route index element={<Home />}></Route>
                 <Route path='products' element={<Product />}></Route>
