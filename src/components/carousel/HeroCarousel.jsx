@@ -11,8 +11,28 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import CarouselSlide from './CarouselSlide';
+import book from "../../assets/images/book.png";
+import fashion from "../../assets/images/fashion.png";
+import technology from "../../assets/images/technology.png"
 
 const HeroCarousel=() =>{
+  const slides = [
+    {
+      title: "This fine print book collections",
+      subtitle: "Discount available, Grab it now!",
+      image: book,
+    },
+    {
+      title: "Exclusive fashion Collection",
+      subtitle: "A Specialists Label Creating Luxury essentials",
+      image: fashion,
+    },
+    {
+      title: "Your Digital World connected.",
+      subtitle: "Explore a range of devices for seamless living.",
+      image: technology
+    }
+  ]
   return (
     <>
       <Swiper
@@ -29,22 +49,11 @@ const HeroCarousel=() =>{
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-            <CarouselSlide></CarouselSlide>
-        </SwiperSlide>
-
-        <SwiperSlide>
-            <CarouselSlide></CarouselSlide>
-        </SwiperSlide>
-
-        <SwiperSlide>
-            <CarouselSlide></CarouselSlide>
-        </SwiperSlide>
-
-        <SwiperSlide>
-            <CarouselSlide></CarouselSlide>
-        </SwiperSlide>
-        
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+              <CarouselSlide title={slide.title} subtitle={slide.subtitle} image={slide.image}></CarouselSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
